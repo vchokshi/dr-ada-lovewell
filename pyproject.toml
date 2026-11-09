@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dr-ada-lovewell"
+version = "0.1.0"
+description = "Dr. Ada Lovewell: a scripted presenter of published, trainee-safe lessons."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["pydantic>=2.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dr_ada_lovewell"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
